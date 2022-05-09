@@ -1,1 +1,4 @@
-destination_list = ["Los Angeles", "Portland", "Seattle"]
+from random import random
+
+
+random
