@@ -1,33 +1,33 @@
 import random
 
-
-def restaurant(food_list):
-    random.choice(food_list)
-    selection = random.choice(food_list)
-    print(selection)
-    sel_input = input("Does this sound like a good restaurant option?: ")
-    if sel_input == "yes":
-        print("Great choice!")
-    elif sel_input != "yes":
-        print("No worries, how about?")
-        random.choice(food_list)
-        selection = random.choice(food_list)
-        print(selection)
-        sel_input = input("Will this work?: ")
-    if sel_input == "yes":
-        print("Great! Almost finished.")
-        
-    elif sel_input != "yes":
-        print("No worries! I've got just the thing.")
-        random.choice(food_list)
-        selection = random.choice(food_list)
-        print(selection)
-        return(random.choice(food_list))
-        
-
-
+def destination(destination_list):    
+    print("Would you like to visit?")
+    random.choice(destination_list)    
+    city = random.choice(destination_list) 
+    print(city)                                       #how do I keep from generating same rando city? I now see I can delete from lists since I named the variable.    
+    user_input =  input("Do you like this location?: ")
+    if user_input == "yes":
+        print(f"Great selection in choosing {city}!")
+        return destination_list        
+    elif user_input != "yes":
+        print("No worries, we have other exciting locations. How about?")
+        random.choice(destination_list)
+        city = random.choice(destination_list)
+        print(city)
+        user_input = input("Do you like this location?: ")
+    if user_input == "yes":
+        print(f"This will be an exciting trip! Now that you've selected {city} let's move on to how you'd like to travel.""")
+        return destination_list
+    elif user_input != "yes":
+        print("""No worries, I've got just the place! Let's make it""")
+        random.choice(destination_list)
+        city = random.choice(destination_list)
+        print(city)
+        return destination_list
 
 
 
 
-restaurant(food_list=["TGIF", "Local Favorite", "Red Robin"])
+
+
+destination(destination_list=["Los Angeles", "Seattle", "Portland", "Boise", "St Paul", "Chicago"])
